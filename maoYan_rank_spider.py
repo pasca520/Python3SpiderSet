@@ -4,7 +4,6 @@ from lxml import etree
 import json
 
 
-
 # 爬虫主体
 def get_page(url, params):
     headers = {
