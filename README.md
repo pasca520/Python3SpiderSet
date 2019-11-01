@@ -48,6 +48,8 @@
 | 解析模块 | xpath |
 |存储类型|文件（txt）|
 
+![](http://blog.pasca.top/2019-11-01-15726233862181.jpg)
+
 [代码链接](https://github.com/pasca520/Python3SpiderSet/blob/master/maoYan_rank_spider.py)
 
 ## 二、购物网站
