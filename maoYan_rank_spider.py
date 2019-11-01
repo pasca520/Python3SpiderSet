@@ -4,6 +4,7 @@ from lxml import etree
 import json
 
 
+
 # 爬虫主体
 def get_page(url, params):
     headers = {
@@ -57,7 +58,7 @@ def parse_page(html):
         return rankList
 
 
-# 写入txt
+# 写入txt，注意
 def write_to_file(content):
     with open('result.txt', 'a', encoding='utf-8') as f:
         print(type(json.dumps(content)))
