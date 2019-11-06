@@ -5,7 +5,7 @@
 
 - 一、内容社区
     - 1.知乎
-        - 知乎图片
+        - [知乎图片](https://github.com/pasca520/Python3SpiderSet#%E7%9F%A5%E4%B9%8E%E5%9B%BE%E7%89%87)
         - 知乎用户信息
     - 2.豆瓣
         - [豆瓣电影排行榜](https://github.com/pasca520/Python3SpiderSet#%E8%B1%86%E7%93%A3%E7%94%B5%E5%BD%B1%E6%8E%92%E8%A1%8C%E6%A6%9C)
@@ -55,14 +55,47 @@
 | 存储模块 | 文件（txt、csv 等等） | 云存储 | SQL |
 
 
-爬取项目以学习为主，尽可能使用更多的模块进行练习，而不是最优解。
-
 
 
 ## 爬虫练手项目集
 ## 一、内容社区
 ### 1. 知乎
 #### 知乎图片
+知乎上有很多钓鱼贴，也成功的钓上了很多鱼，你懂的~~~
+这里简单的爬些图片分析，仅供联系使用：
+| 示例 | python 库 | 
+| --- | --- | 
+| 爬取模块 | request | 
+| 解析模块 | re |
+|存储类型|存储图片到本地&七牛云存储|
+
+
+参考知乎文章（回答数平均3k以上）：
+- [女生素颜能漂亮到什么程度？ 
+](https://www.zhihu.com/question/305888519)
+- [平常人可以漂亮到什么程度？](https://www.zhihu.com/question/50426133)
+- [你见过最漂亮的女生长什么样？](https://www.zhihu.com/question/34243513)
+- [拥有一双大长腿是怎样的体验？](https://www.zhihu.com/question/285321190)
+- [身材好是一种怎样的体验？](https://www.zhihu.com/question/26037846)
+- [女生什么样的身材算是好身材？](https://www.zhihu.com/question/333026642)
+
+接口返回的 json 数据 content 模块中，包含图片的有四个参数，被包含在
+```
+<figure>
+ <noscript>
+ <img src='用户ID水印图片' data-default-watermark-src='知乎 logo水印图片' data-original='用户ID水印图片'/>
+  </noscript>
+<img src=继承  data-default-watermark-src='知乎 logo水印图片' data-original='用户ID水印图片'/>
+</figure>
+```
+分别是「img src、data-default-watermark-src、data-original、data-actualsrc」。
+其中noscript标签是某些浏览器把Javascript禁用了才生效的，默认不生效。
+
+**不足：**
+- 因为仅仅学习使用，所以只开单线程模式，未开启多线程加速
+- 对于错误异常未能很好的处理，我运行时没遇到
+
+
 #### 知乎用户信息
 
 ### 2. 豆瓣
